@@ -8,7 +8,7 @@ const
   base: string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 proc encode*(input: int;
-            alhabet: string = base): string =
+            alphabet: string = base): string =
   result = base
 
 # Should return either decoded result or -1 for error
@@ -17,3 +17,6 @@ proc decode*(input: string;
   if not rs.isValidResult(input,alphabet):
     return -1
   return 0
+
+# when isMainModule:
+# add tests
