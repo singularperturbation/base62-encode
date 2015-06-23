@@ -1,3 +1,4 @@
+import tables
 import sequtils
 import strutils
 
@@ -16,3 +17,13 @@ proc isValidResult*(input: string,
   var
     validChars: set[char] = toCharset(alphabet)
   input.allCharsInSet(validChars)
+
+template toCharMap*(input: string): Table[char,int] =
+  var 
+    orderMap = initTable[char,int](rightSize(len(input)))
+    count = 0
+  for c in input:
+    orderMap.add(c,count)
+    count += 1
+  orderMap
+

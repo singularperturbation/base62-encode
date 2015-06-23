@@ -1,8 +1,8 @@
 [Package]
 name          = "base62"
 version       = "0.1.0"
-author        = "Anonymous"
-description   = "New Nimble project for Nim"
+author        = "perturbation"
+description   = "Base-62 encoding / decoding"
 license       = "MIT"
 
 [Deps]
