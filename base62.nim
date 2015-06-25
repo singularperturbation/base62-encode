@@ -1,12 +1,16 @@
 import tables
 import private/resultSet as rs
 
-# These all use alphabet as a parameter, but it would make more sense to have
-# it as a parameter to templates that generate these procedures, as we'll only 
-# really want to specify on the first call.
+# Alphabet is provided to factory functions that return the encoder and decoder
+# as a tuple of functions.
 
 const
   base: string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+type 
+  DecoderFunc* = proc(input: int):    string
+  EncoderFunc* = proc(input: string): int
+  FunctionPair* = tuple[encoder: EncoderFunc, decoder: DecoderFunc]
 
 proc encode*(input: int;
             alphabet: string = base): string =

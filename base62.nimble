@@ -2,7 +2,7 @@
 name          = "base62"
 version       = "0.1.0"
 author        = "perturbation"
-description   = "Base-62 encoding / decoding"
+description   = "Encoder/Decoder.  Defaults to Base-62, but allows for an arbitrary alphabet."
 license       = "MIT"
 
 [Deps]
